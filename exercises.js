@@ -113,7 +113,7 @@ const twoD = (arr) => {
       arr[index] = zeroedArray
     }
   })
-  console.log(arr)
+  console.log('Zero and 1s array:', arr)
 }
 
 twoD([[1,0,1,1,0],
@@ -126,12 +126,21 @@ twoD([[1,0,1,1,0],
 //  String Rotation
 
 const checkRotation = (str1, str2) => {
-  let rotated = true;
-
-  if(str1 === str2) {
-    return
+  let rotations = [str1]
+  let rotated = str1
+  let itIsRotated = false
+  for (let i = 0; i < str1.length - 1; i++) {
+    let toConcat = rotated[0]
+    rotated = rotated.concat(toConcat).slice(1)
+    rotations.push(rotated)
   }
-
+  for (let i = 0; i < str2.length; i++) {
+    if (rotations[i] === str2) {
+      itIsRotated = true;
+    }
+  }
+  console.log('Is it rotated?', itIsRotated)
 
 }
 
+checkRotation('amazon', 'azonma')
