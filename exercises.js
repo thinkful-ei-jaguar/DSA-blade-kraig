@@ -139,8 +139,9 @@ const checkRotation = (str1, str2) => {
       itIsRotated = true;
     }
   }
-  console.log('Is it rotated?', itIsRotated)
+  console.log(`Is ${str2} a rotation of ${str1}? ${itIsRotated}`)
 
 }
 
 checkRotation('amazon', 'azonma')
+checkRotation('amazon', 'azonam')
